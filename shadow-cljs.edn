@@ -1,0 +1,13 @@
+{:source-paths ["src"]
+
+ :dependencies [[cider/cider-nrepl "0.30.0"]
+                [cider/piggieback "0.5.3"]
+                [nrepl "1.0.0"]
+                [reagent/reagent "1.2.0"]]
+
+ :dev-http {1420 "public"}
+
+ :builds {:app {:target :browser
+                :output-dir "public/js"
+                :asset-path "/js"
+                :modules {:main {:init-fn app.core/main}}}}}

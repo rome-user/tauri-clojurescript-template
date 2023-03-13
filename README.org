@@ -1,0 +1,71 @@
+#+TITLE: Tauri + ClojureScript template
+#+AUTHOR: rome-user
+#+LANGUAGE: en
+
+#+CAPTION: A demonstration of the app provided by this template.
+#+NAME: App Demonstration
+#+ATTR_HTML: :width 500px
+[[./app-demo.png]]
+
+This project lays out a bare minimum template for using ClojureScript with
+Tauri. Out of the box, the following is provided:
+
+- Shadow CLJS
+- React
+- Reagent
+
+* Getting Started
+
+** Starting the development environment
+
+After cloning this repository, run the following commands in a terminal.
+
+#+begin_example
+npm ci
+npm run tauri dev
+#+end_example
+
+The =tauri dev= script will ensure a Shadow CLJS watch is started. If you are
+using Emacs, then you can =M-x cider-connect-cljs= and start coding!
+
+** Source structure
+
+The source code is organized exactly as any other Shadow CLJS project, but there
+is an additional =src-tauri= folder. This folder contains Rust code.
+
+** Producing a release build
+
+First ensure =tauri.bundle.identifier= in =src-tauri/tauri.conf.json= contains a
+value other than =com.tauri.dev=. Otherwise the build will fail, since this
+value is expected to be unique.
+
+After you have changed this value, you can simply run the following command.
+#+begin_example
+npm run tauri build
+#+end_example
+
+If you use Mac, then this process produces a disk image with a release build of
+the app inside.
+
+* Caveats
+
+** Reagent and React 18
+
+Reagent has /experimental/ React 18 support. If you would like to fully embrace
+modern React, consider using the [[https://github.com/lilactown/helix][helix]] library.
+
+This template in the future may migrate to Helix, so that newcomers can
+immediately start enjoying a modern React wrapper without compromises.
+
+** Helix and live refresh
+
+If you decide to use Helix over Reagent, please note that there is extra setup
+needed for maintaning component state when Shadow CLJS reloads files. In
+particular, you will want to install the =react-refresh= library from NPM and
+follow the instructions [[https://github.com/lilactown/helix/blob/master/docs/experiments.md#fast-refresh][here]].
+
+* Learning more
+
+To learn more about ClojureScript, check out the official [[https://clojurescript.org/guides/quick-start][Quick Start guide]].
+
+To learn more about Tauri, see the official [[https://tauri.app/v1/guides/][Tauri v1 Guide]].
