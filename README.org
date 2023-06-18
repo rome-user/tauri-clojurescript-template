@@ -12,7 +12,7 @@ Tauri. Out of the box, the following is provided:
 
 - Shadow CLJS
 - React
-- Reagent
+- Helix
 
 * Getting Started
 
@@ -49,20 +49,12 @@ the app inside.
 
 * Caveats
 
-** Reagent and React 18
+** CIDER integration
 
-Reagent has /experimental/ React 18 support. If you would like to fully embrace
-modern React, consider using the [[https://github.com/lilactown/helix][helix]] library.
-
-This template in the future may migrate to Helix, so that newcomers can
-immediately start enjoying a modern React wrapper without compromises.
-
-** Helix and live refresh
-
-If you decide to use Helix over Reagent, please note that there is extra setup
-needed for maintaning component state when Shadow CLJS reloads files. In
-particular, you will want to install the =react-refresh= library from NPM and
-follow the instructions [[https://github.com/lilactown/helix/blob/master/docs/experiments.md#fast-refresh][here]].
+Since this project is launched with an NPM script, we need to provide fixed
+versions of =nrepl=, =cider/cider-nrepl=, and =cider/piggieback=. Depending on
+the version of CIDER being used in your editor, you may need to downgrade the
+versions in use by this template.
 
 * Learning more
 
