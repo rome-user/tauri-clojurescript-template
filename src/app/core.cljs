@@ -16,7 +16,6 @@
                           ;; Learn more about Tauri commands at
                           ;; https://tauri.app/v1/guides/features/command
                           (fn []
-                            (tap> name)
                             (-> (.invoke tauri "greet" #js {:name name})
                                 (.then #(set-mesg %)))))]
     (d/div {:class "container"}
