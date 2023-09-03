@@ -1,6 +1,6 @@
 {:source-paths ["src"]
 
- :dependencies [[cider/cider-nrepl "0.30.0"]
+ :dependencies [[cider/cider-nrepl "0.37.0"]
                 [cider/piggieback "0.5.3"]
                 [nrepl "1.0.0"]
                 [lilactown/helix "0.1.10"]]
